@@ -8,7 +8,7 @@ using oop_lab3.Classes.StackableItemClasses;
 
 namespace oop_lab3.Classes.Items.Craftables
 {
-    public sealed class StickItem : Stackable64Item
+    public sealed class StickItem : Stackable16Item
     {
         public override ItemType Type => ItemType.Stick;
     }
