@@ -74,6 +74,12 @@
     <Compile Include="Classes\Builder\DialogBuilder.cs" />
     <Compile Include="Classes\Builder\IDialogBuilder.cs" />
     <Compile Include="Classes\Builder\ViewDialogBuilder.cs" />
+    <Compile Include="Classes\SerializerAdapter\BinaryFormatterAdapter.cs" />
+    <Compile Include="Classes\SerializerAdapter\ISerializer.cs" />
+    <Compile Include="Classes\SerializerAdapter\XmlSerializerAdapter.cs" />
+    <Compile Include="SerializeDialog.xaml.cs">
+      <DependentUpon>SerializeDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewDialog.xaml.cs">
       <DependentUpon>ViewDialog.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PickItemDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SerializeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
