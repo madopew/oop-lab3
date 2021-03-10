@@ -8,64 +8,80 @@
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.StackableItemClasses.StackableItem">
-    <Position X="4.5" Y="3.75" Width="1.5" />
+    <Position X="3" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAIAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAIAAAAAAAAAAAAAAAAABACAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\StackableItemClasses\StackableItem.cs</FileName>
     </TypeIdentifier>
     <Lollipop Orientation="Left" Position="0.1" />
   </Class>
   <Class Name="oop_lab3.Classes.StackableItemClasses.Stackable16Item">
-    <Position X="2.25" Y="7" Width="1.5" />
+    <Position X="0.5" Y="7" Width="1.5" />
+    <InheritanceLine Type="oop_lab3.Classes.StackableItemClasses.StackableItem" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="6.463" />
+        <Point X="3.75" Y="6.721" />
+        <Point X="1.25" Y="6.721" />
+        <Point X="1.25" Y="7" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\StackableItemClasses\Stackable16Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.StackableItemClasses.Stackable64Item">
-    <Position X="6.75" Y="7" Width="1.5" />
+    <Position X="5.25" Y="7" Width="1.5" />
+    <InheritanceLine Type="oop_lab3.Classes.StackableItemClasses.StackableItem" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="6.463" />
+        <Point X="3.75" Y="6.712" />
+        <Point X="6" Y="6.712" />
+        <Point X="6" Y="7" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\StackableItemClasses\Stackable64Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.NonstackableItemClasses.NonstackableItem" Collapsed="true">
-    <Position X="9" Y="4" Width="1.5" />
+    <Position X="9.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NonstackableItemClasses\NonstackableItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Items.Blocks.DirtBlockItem">
-    <Position X="5.5" Y="9.5" Width="1.5" />
+    <Position X="5.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\Blocks\DirtBlockItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Items.Craftables.StickItem">
-    <Position X="8" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\Craftables\StickItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Items.Placeables.BedBlockItem">
-    <Position X="1" Y="9.5" Width="1.5" />
+    <Position X="9.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
       <FileName>Classes\Items\Placeables\BedBlockItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Items.Usables.FlintAndSteelItem">
-    <Position X="3.5" Y="9.5" Width="1.5" />
+    <Position X="7.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\Usables\FlintAndSteelItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Items.Weapons.SwordItem">
-    <Position X="9" Y="5.75" Width="1.5" />
+    <Position X="12" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAQAEAAAAAAA=</HashCode>
       <FileName>Classes\Items\Weapons\SwordItem.cs</FileName>
@@ -73,7 +89,7 @@
     <Lollipop Orientation="Right" Position="0.1" />
   </Class>
   <Class Name="oop_lab3.Classes.InventoryClasses.Inventory">
-    <Position X="13.5" Y="1.5" Width="2" />
+    <Position X="18" Y="1.5" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -90,28 +106,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="oop_lab3.Classes.Other.Color">
-    <Position X="1" Y="11.75" Width="1.5" />
+    <Position X="9.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEAAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAEAAQA=</HashCode>
       <FileName>Classes\Other\Color.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="oop_lab3.Classes.ItemClasses.IStackable">
-    <Position X="2.25" Y="3.75" Width="1.5" />
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAIAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ItemClasses\IStackable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="oop_lab3.Classes.ItemClasses.IEnchantable">
-    <Position X="11.5" Y="5.75" Width="1.5" />
+    <Position X="14.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAAAAEAAAAAAA=</HashCode>
       <FileName>Classes\ItemClasses\IEnchantable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="oop_lab3.Classes.ItemClasses.Enchantments">
-    <Position X="11.5" Y="7.75" Width="1.5" />
+    <Position X="14.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAEAgAA=</HashCode>
       <FileName>Classes\ItemClasses\Enchantments.cs</FileName>
