@@ -23,7 +23,9 @@
                       Name="ViewMenuItem"
                       Click="ViewMenuItem_OnClick"/>
             <MenuItem Header="Change"
-                      CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Parent}"/>
+                      CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Parent}"
+                      Name="ChangeMenuItem"
+                      Click="ChangeMenuItem_OnClick"/>
         </ContextMenu>
     </Window.Resources>
     <Grid>

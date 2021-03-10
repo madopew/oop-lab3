@@ -12,7 +12,7 @@ namespace oop_lab3.Classes.Items.Weapons
     {
         public override ItemType Type => ItemType.Sword;
 
-        public Enchantments Enchantments { get; private set; }
+        public Enchantments Enchantments { get; set; }
 
         public void Disenchant()
         {

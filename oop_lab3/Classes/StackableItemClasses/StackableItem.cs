@@ -9,7 +9,20 @@ namespace oop_lab3.Classes.StackableItemClasses
 {
     public abstract class StackableItem : Item, IStackable
     {
-        public int Amount { get; private set; }
+        private int amount;
+        public int Amount
+        {
+            get => amount;
+            set
+            {
+                if (value < 0 || value > this.StackMax)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value));
+                }
+
+                this.amount = value;
+            }
+        }
         public abstract int StackMax { get; }
 
         protected StackableItem()

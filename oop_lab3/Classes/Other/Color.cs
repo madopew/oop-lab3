@@ -18,5 +18,10 @@ namespace oop_lab3.Classes.Other
             this.G = g;
             this.B = b;
         }
+
+        public override string ToString()
+        {
+            return $"rgb({R}, {G}, {B})";
+        }
     }
 }
