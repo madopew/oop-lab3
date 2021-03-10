@@ -213,27 +213,50 @@ namespace oop_lab3
 
             using (FileStream f = new FileStream(fileName, FileMode.Create))
             {
-                 serializer.Serialize(f, items);
+                try
+                {
+                    serializer.Serialize(f, items);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    MessageBox.Show("Inventory cannot be serialized!", "Error!", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
             }
         }
 
         private void DeserializeMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            var xs = new XmlSerializer(typeof(Item[]));
-
-            using (FileStream f = new FileStream("./test.xml", FileMode.Open))
+            DeserializeDialog dialog = new DeserializeDialog();
+            if (dialog.ShowDialog() != true)
             {
-                using (StreamReader sr = new StreamReader(f))
+                return;
+            }
+
+            bool isXml = dialog.IsXml;
+            string fileName = dialog.FileName;
+
+            ISerializer serializer;
+            if (isXml)
+            {
+                serializer = new XmlSerializerAdapter(typeof(Item[]));
+            }
+            else
+            {
+                serializer = new BinaryFormatterAdapter();
+            }
+
+            using (FileStream f = new FileStream(fileName, FileMode.Open))
+            {
+                var items = (Item[])serializer.Deserialize(f);
+
+                for (int i = 0; i < items.Length; i++)
                 {
-                    var items = (Item[])xs.Deserialize(sr);
-
-                    for (int i = 0; i < items.Length; i++)
-                    {
-                        inv[i] = items[i];
-                    }
-
-                    RaisePropertyChanged(null);
+                    inv[i] = items[i];
                 }
+
+                RaisePropertyChanged(null);
             }
         }
     }
