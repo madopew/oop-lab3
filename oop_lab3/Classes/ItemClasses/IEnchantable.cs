@@ -2,7 +2,7 @@
 {
     public interface IEnchantable
     {
-        Enchantments Enchantments { get; }
+        Enchantments Enchantments { get; set; }
         void Enchant(Enchantments enchantments);
         void Disenchant();
     }
