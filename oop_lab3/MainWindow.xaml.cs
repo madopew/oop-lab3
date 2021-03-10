@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using oop_lab3.Classes.Builder;
 using oop_lab3.Classes.Factory;
 using oop_lab3.Classes.InventoryClasses;
 using oop_lab3.Classes.ItemClasses;
@@ -147,7 +148,30 @@ namespace oop_lab3
             }
 
             Item item = inv[slotIndex];
-            Debug.WriteLine(item.GetType());
+
+            IDialogBuilder builder = new ViewDialogBuilder();
+            builder.Item = item;
+            new ViewDialog(builder).ShowDialog();
+        }
+
+        private void ChangeMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            int slotIndex = FindClickedItem(sender);
+            if (slotIndex == -1)
+            {
+                return;
+            }
+
+            Item item = inv[slotIndex];
+
+            IDialogBuilder builder = new ChangeDialogBuilder();
+            builder.Item = item;
+            ViewDialog dialog = new ViewDialog(builder);
+
+            if (dialog.ShowDialog() == true)
+            {
+                RaisePropertyChanged(null);
+            }
         }
     }
 }

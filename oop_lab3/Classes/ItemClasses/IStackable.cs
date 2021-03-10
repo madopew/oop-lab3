@@ -2,7 +2,7 @@
 {
     internal interface IStackable
     {
-        int Amount { get; }
+        int Amount { get; set; }
         int StackMax { get; }
         void Add();
         void Add(int amount);
