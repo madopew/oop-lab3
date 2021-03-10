@@ -8,6 +8,8 @@ using oop_lab3.Classes.ItemClasses;
 using oop_lab3.Classes.Items.Placeables;
 using oop_lab3.Classes.Items.Usables;
 using oop_lab3.Classes.Items.Weapons;
+using oop_lab3.Classes.Other;
+using Xceed.Wpf.Toolkit;
 
 namespace oop_lab3.Classes.Builder
 {
@@ -63,7 +65,11 @@ namespace oop_lab3.Classes.Builder
                         });
                     break;
                 case BedBlockItem bed:
-                    base.AddColorPicker("ItemColor");
+                    base.AddColorPicker("ItemColor", bed.Color, (o, e) =>
+                    {
+                        var selectedColor = ((ColorPicker) o).SelectedColor.Value;
+                        bed.Color = new Color(selectedColor.R, selectedColor.G, selectedColor.B);
+                    });
                     break;
             }
         }

@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using oop_lab3.Classes.ItemClasses;
+using oop_lab3.Classes.Other;
 using Xceed.Wpf.Toolkit;
+using Color = oop_lab3.Classes.Other.Color;
 
 namespace oop_lab3.Classes.Builder
 {
@@ -115,13 +118,24 @@ namespace oop_lab3.Classes.Builder
             this.panel.Children.Add(horizontalPanel);
         }
 
-        protected void AddColorPicker(string name)
+        protected void AddColorPicker(string name, Color selectedColor, Action<object, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?>> onColorChange)
         {
+            var color = new System.Windows.Media.Color();
+            color.R = selectedColor.R;
+            color.G = selectedColor.G;
+            color.B = selectedColor.B;
+            color.A = byte.MaxValue;
+
             ColorPicker cp = new ColorPicker
             {
                 DisplayColorAndName = true,
                 Name = name,
+                SelectedColor = color,
+                UsingAlphaChannel = false,
+                ShowStandardColors = false,
+                Margin = new Thickness(0, 0, 0, 10),
             };
+            cp.SelectedColorChanged += (o, e) => onColorChange(o, e);
 
             this.Panel.Children.Add(cp);
         }
