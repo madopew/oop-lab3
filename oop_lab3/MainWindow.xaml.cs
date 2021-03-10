@@ -249,7 +249,18 @@ namespace oop_lab3
 
             using (FileStream f = new FileStream(fileName, FileMode.Open))
             {
-                var items = (Item[])serializer.Deserialize(f);
+                Item[] items;
+                try
+                {
+                    items = (Item[]) serializer.Deserialize(f);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    MessageBox.Show("Cannot get object data!", "Error!", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    return;
+                }
 
                 for (int i = 0; i < items.Length; i++)
                 {
