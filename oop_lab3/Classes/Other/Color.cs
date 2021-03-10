@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace oop_lab3.Classes.Other
 {
+    [Serializable]
     public class Color
     {
-        public byte R { get; }
-        public byte G { get; }
-        public byte B { get; }
+        public byte R { get; set; }
+        public byte G { get; set; }
+        public byte B { get; set; }
+
+        private Color()
+            : this(255, 255, 255)
+        {
+        }
 
         public Color(byte r, byte g, byte b)
         {

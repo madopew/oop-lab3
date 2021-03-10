@@ -10,6 +10,7 @@ using oop_lab3.Classes.StackableItemClasses;
 
 namespace oop_lab3.Classes.Items.Placeables
 {
+    [Serializable]
     public sealed class BedBlockItem : NonstackableItem
     {
         public override ItemType Type => ItemType.Bed;

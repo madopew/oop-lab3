@@ -8,6 +8,7 @@ using oop_lab3.Classes.NonstackableItemClasses;
 
 namespace oop_lab3.Classes.Items.Weapons
 {
+    [Serializable]
     public sealed class SwordItem : NonstackableItem, IEnchantable
     {
         public override ItemType Type => ItemType.Sword;

@@ -7,6 +7,7 @@ using oop_lab3.Classes.ItemClasses;
 
 namespace oop_lab3.Classes.StackableItemClasses
 {
+    [Serializable]
     public abstract class Stackable64Item : StackableItem
     {
         public override int StackMax => 64;

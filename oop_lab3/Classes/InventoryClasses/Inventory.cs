@@ -8,7 +8,6 @@ using oop_lab3.Classes.ItemClasses;
 
 namespace oop_lab3.Classes.InventoryClasses
 {
-    [Serializable]
     public sealed partial class Inventory
     {
         private static volatile Inventory instance;
@@ -102,7 +101,7 @@ namespace oop_lab3.Classes.InventoryClasses
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                slots[i] = null;
+                slots[i].Item = null;
             }
         }
     }

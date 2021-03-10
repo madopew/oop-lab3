@@ -9,6 +9,7 @@ using oop_lab3.Classes.StackableItemClasses;
 
 namespace oop_lab3.Classes.Items.Usables
 {
+    [Serializable]
     public sealed class FlintAndSteelItem : NonstackableItem
     {
         public override ItemType Type => ItemType.FlintAndSteel;

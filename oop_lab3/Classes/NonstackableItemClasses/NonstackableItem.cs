@@ -7,6 +7,7 @@ using oop_lab3.Classes.ItemClasses;
 
 namespace oop_lab3.Classes.NonstackableItemClasses
 {
+    [Serializable]
     public abstract class NonstackableItem : Item
     {
     }

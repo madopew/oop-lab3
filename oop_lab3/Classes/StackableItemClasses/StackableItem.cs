@@ -7,6 +7,7 @@ using oop_lab3.Classes.ItemClasses;
 
 namespace oop_lab3.Classes.StackableItemClasses
 {
+    [Serializable]
     public abstract class StackableItem : Item, IStackable
     {
         private int amount;

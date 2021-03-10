@@ -8,6 +8,7 @@ using oop_lab3.Classes.StackableItemClasses;
 
 namespace oop_lab3.Classes.Items.Blocks
 {
+    [Serializable]
     public sealed class DirtBlockItem : Stackable64Item
     {
         public override ItemType Type => ItemType.Dirt;
