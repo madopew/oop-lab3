@@ -38,9 +38,16 @@
                 <MenuItem Header="Pick item"
                           Name="PickMenuItem"
                           Click="PickMenuItem_OnClick"/>
+                <MenuItem Header="Clear"
+                          Name="ClearMenuItem"
+                          Click="ClearMenuItem_OnClick"/>
                 <Separator/>
-                <MenuItem Header="Serialize"/>
-                <MenuItem Header="Deserialize"/>
+                <MenuItem Header="Serialize"
+                          Name="SerializeMenuItem"
+                          Click="SerializeMenuItem_OnClick"/>
+                <MenuItem Header="Deserialize"
+                          Name="DeserializeMenuItem"
+                          Click="DeserializeMenuItem_OnClick"/>
             </ContextMenu>
         </Grid.ContextMenu>
 

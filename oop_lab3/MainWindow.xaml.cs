@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,10 +16,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 using oop_lab3.Classes.Builder;
 using oop_lab3.Classes.Factory;
 using oop_lab3.Classes.InventoryClasses;
 using oop_lab3.Classes.ItemClasses;
+using oop_lab3.Classes.SerializerAdapter;
 
 namespace oop_lab3
 {
@@ -89,6 +93,12 @@ namespace oop_lab3
                     RaisePropertyChanged(null);
                 }
             }
+        }
+
+        private void ClearMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            inv.Clear();
+            RaisePropertyChanged(null);
         }
 
         private int FindClickedItem(object sender)
@@ -171,6 +181,59 @@ namespace oop_lab3
             if (dialog.ShowDialog() == true)
             {
                 RaisePropertyChanged(null);
+            }
+        }
+
+        private void SerializeMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            SerializeDialog dialog = new SerializeDialog();
+            if (dialog.ShowDialog() != true)
+            {
+                return;
+            }
+
+            bool isXml = dialog.IsXml;
+            string fileName = dialog.FileName;
+
+            var items = new Item[(int) inv.Type];
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = inv[i];
+            }
+
+            ISerializer serializer;
+            if (isXml)
+            {
+                serializer = new XmlSerializerAdapter(items.GetType());
+            }
+            else
+            {
+                serializer = new BinaryFormatterAdapter();
+            }
+
+            using (FileStream f = new FileStream(fileName, FileMode.Create))
+            {
+                 serializer.Serialize(f, items);
+            }
+        }
+
+        private void DeserializeMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var xs = new XmlSerializer(typeof(Item[]));
+
+            using (FileStream f = new FileStream("./test.xml", FileMode.Open))
+            {
+                using (StreamReader sr = new StreamReader(f))
+                {
+                    var items = (Item[])xs.Deserialize(sr);
+
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                        inv[i] = items[i];
+                    }
+
+                    RaisePropertyChanged(null);
+                }
             }
         }
     }
