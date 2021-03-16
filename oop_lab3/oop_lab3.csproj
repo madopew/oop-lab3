@@ -70,13 +70,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\Builder\ChangeDialogBuilder.cs" />
-    <Compile Include="Classes\Builder\DialogBuilder.cs" />
-    <Compile Include="Classes\Builder\IDialogBuilder.cs" />
-    <Compile Include="Classes\Builder\ViewDialogBuilder.cs" />
-    <Compile Include="Classes\SerializerAdapter\BinaryFormatterAdapter.cs" />
-    <Compile Include="Classes\SerializerAdapter\ISerializer.cs" />
-    <Compile Include="Classes\SerializerAdapter\XmlSerializerAdapter.cs" />
+    <Compile Include="Classes\GameClasses\InventoryClasses\Inventory.cs" />
+    <Compile Include="Classes\GameClasses\InventoryClasses\InventoryType.cs" />
+    <Compile Include="Classes\GameClasses\InventoryClasses\Slot.cs" />
+    <Compile Include="Classes\GameClasses\ItemClasses\Enchantments.cs" />
+    <Compile Include="Classes\GameClasses\ItemClasses\IEnchantable.cs" />
+    <Compile Include="Classes\GameClasses\ItemClasses\IStackable.cs" />
+    <Compile Include="Classes\GameClasses\ItemClasses\Item.cs" />
+    <Compile Include="Classes\GameClasses\ItemClasses\ItemType.cs" />
+    <Compile Include="Classes\GameClasses\Items\Blocks\DirtBlockItem.cs" />
+    <Compile Include="Classes\GameClasses\Items\Craftables\StickItem.cs" />
+    <Compile Include="Classes\GameClasses\Items\Placeables\BedBlockItem.cs" />
+    <Compile Include="Classes\GameClasses\Items\Usables\FlintAndSteelItem.cs" />
+    <Compile Include="Classes\GameClasses\Items\Weapons\SwordItem.cs" />
+    <Compile Include="Classes\GameClasses\NonstackableItemClasses\NonstackableItem.cs" />
+    <Compile Include="Classes\GameClasses\Other\Color.cs" />
+    <Compile Include="Classes\GameClasses\StackableItemClasses\Stackable16Item.cs" />
+    <Compile Include="Classes\GameClasses\StackableItemClasses\Stackable64Item.cs" />
+    <Compile Include="Classes\GameClasses\StackableItemClasses\StackableItem.cs" />
+    <Compile Include="Classes\ProjectClasses\Builder\ChangeDialogBuilder.cs" />
+    <Compile Include="Classes\ProjectClasses\Builder\DialogBuilder.cs" />
+    <Compile Include="Classes\ProjectClasses\Builder\IDialogBuilder.cs" />
+    <Compile Include="Classes\ProjectClasses\Builder\ViewDialogBuilder.cs" />
+    <Compile Include="Classes\ProjectClasses\Factory\ItemFactory.cs" />
+    <Compile Include="Classes\ProjectClasses\Factory\ItemSerializerFactory.cs" />
+    <Compile Include="Classes\ProjectClasses\Plugin\IStreamConverterPlugin.cs" />
+    <Compile Include="Classes\ProjectClasses\SerializerAdapter\BinaryFormatterAdapter.cs" />
+    <Compile Include="Classes\ProjectClasses\SerializerAdapter\ISerializer.cs" />
+    <Compile Include="Classes\ProjectClasses\SerializerAdapter\XmlSerializerAdapter.cs" />
+    <Compile Include="Classes\ProjectClasses\SerializerDecorator\BaseSerializerDecorator.cs" />
+    <Compile Include="Classes\ProjectClasses\SerializerDecorator\PluginSerializerDecorator.cs" />
     <Compile Include="CustomView\DeserializeDialog.xaml.cs">
       <DependentUpon>DeserializeDialog.xaml</DependentUpon>
     </Compile>
@@ -98,25 +121,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Factory\ItemFactory.cs" />
-    <Compile Include="Classes\InventoryClasses\Inventory.cs" />
-    <Compile Include="Classes\InventoryClasses\InventoryType.cs" />
-    <Compile Include="Classes\ItemClasses\Enchantments.cs" />
-    <Compile Include="Classes\ItemClasses\IEnchantable.cs" />
-    <Compile Include="Classes\ItemClasses\IStackable.cs" />
-    <Compile Include="Classes\ItemClasses\Item.cs" />
-    <Compile Include="Classes\ItemClasses\ItemType.cs" />
-    <Compile Include="Classes\InventoryClasses\Slot.cs" />
-    <Compile Include="Classes\Items\Blocks\DirtBlockItem.cs" />
-    <Compile Include="Classes\Items\Craftables\StickItem.cs" />
-    <Compile Include="Classes\Items\Placeables\BedBlockItem.cs" />
-    <Compile Include="Classes\Items\Usables\FlintAndSteelItem.cs" />
-    <Compile Include="Classes\Items\Weapons\SwordItem.cs" />
-    <Compile Include="Classes\NonstackableItemClasses\NonstackableItem.cs" />
-    <Compile Include="Classes\Other\Color.cs" />
-    <Compile Include="Classes\StackableItemClasses\Stackable16Item.cs" />
-    <Compile Include="Classes\StackableItemClasses\Stackable64Item.cs" />
-    <Compile Include="Classes\StackableItemClasses\StackableItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -155,7 +159,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Diagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -165,9 +168,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\GameClasses" />
+    <Folder Include="Classes\ProjectClasses" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
