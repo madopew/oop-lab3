@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace oop_lab3.Classes.SerializerAdapter
+namespace oop_lab3.Classes.ProjectClasses.SerializerAdapter
 {
     public class BinaryFormatterAdapter : ISerializer
     {
-        private BinaryFormatter binaryFormatter;
+        private readonly BinaryFormatter binaryFormatter;
 
         public BinaryFormatterAdapter()
         {

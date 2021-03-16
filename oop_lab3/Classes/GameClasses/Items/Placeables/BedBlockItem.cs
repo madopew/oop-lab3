@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.NonstackableItemClasses;
-using oop_lab3.Classes.Other;
-using oop_lab3.Classes.StackableItemClasses;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.NonstackableItemClasses;
+using oop_lab3.Classes.GameClasses.Other;
 
-namespace oop_lab3.Classes.Items.Placeables
+namespace oop_lab3.Classes.GameClasses.Items.Placeables
 {
     [Serializable]
     public sealed class BedBlockItem : NonstackableItem

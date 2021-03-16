@@ -2,13 +2,11 @@
 using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.Other;
+using oop_lab3.Classes.GameClasses.ItemClasses;
 using Xceed.Wpf.Toolkit;
-using Color = oop_lab3.Classes.Other.Color;
+using Color = oop_lab3.Classes.GameClasses.Other.Color;
 
-namespace oop_lab3.Classes.Builder
+namespace oop_lab3.Classes.ProjectClasses.Builder
 {
     public abstract class DialogBuilder : IDialogBuilder
     {
@@ -18,20 +16,20 @@ namespace oop_lab3.Classes.Builder
 
         public Window ParentWindow
         {
-            get => this.parent;
-            set => this.parent = value ?? throw new ArgumentNullException(nameof(value));
+            get => parent;
+            set => parent = value ?? throw new ArgumentNullException(nameof(value));
             
         }
         public StackPanel Panel
         {
-            get => this.panel;
-            set => this.panel = value ?? throw new ArgumentNullException(nameof(value));
+            get => panel;
+            set => panel = value ?? throw new ArgumentNullException(nameof(value));
             
         }
         public Item Item
         {
-            get => this.item;
-            set => this.item = value ?? throw new ArgumentNullException(nameof(value));
+            get => item;
+            set => item = value ?? throw new ArgumentNullException(nameof(value));
             
         }
 

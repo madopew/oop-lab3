@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.Items.Blocks;
-using oop_lab3.Classes.Items.Craftables;
-using oop_lab3.Classes.Items.Placeables;
-using oop_lab3.Classes.Items.Usables;
-using oop_lab3.Classes.Items.Weapons;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.Items.Blocks;
+using oop_lab3.Classes.GameClasses.Items.Craftables;
+using oop_lab3.Classes.GameClasses.Items.Placeables;
+using oop_lab3.Classes.GameClasses.Items.Usables;
+using oop_lab3.Classes.GameClasses.Items.Weapons;
 
-namespace oop_lab3.Classes.Factory
+namespace oop_lab3.Classes.ProjectClasses.Factory
 {
     public static class ItemFactory
     {
-        private static readonly Dictionary<ItemType, Func<Item>> creationDictionary = new Dictionary<ItemType, Func<Item>>
+        private static readonly Dictionary<ItemType, Func<Item>> CreationDictionary = new Dictionary<ItemType, Func<Item>>
         {
             {ItemType.Bed, () => new BedBlockItem()},
             {ItemType.Dirt, () => new DirtBlockItem()},
@@ -29,7 +26,7 @@ namespace oop_lab3.Classes.Factory
                 throw new ArgumentException("This item type is not defined");
             }
 
-            return creationDictionary[type]();
+            return CreationDictionary[type]();
         }
     }
 }

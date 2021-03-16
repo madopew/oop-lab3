@@ -1,12 +1,8 @@
-﻿using oop_lab3.Classes.ItemClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.StackableItemClasses;
+﻿using System;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.StackableItemClasses;
 
-namespace oop_lab3.Classes.Items.Craftables
+namespace oop_lab3.Classes.GameClasses.Items.Craftables
 {
     [Serializable]
     public sealed class StickItem : Stackable16Item

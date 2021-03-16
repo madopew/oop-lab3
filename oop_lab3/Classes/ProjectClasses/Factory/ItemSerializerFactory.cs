@@ -1,7 +1,7 @@
-﻿using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.SerializerAdapter;
+﻿using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.ProjectClasses.SerializerAdapter;
 
-namespace oop_lab3.Classes.Factory
+namespace oop_lab3.Classes.ProjectClasses.Factory
 {
     public static class ItemSerializerFactory
     {

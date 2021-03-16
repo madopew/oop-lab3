@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace oop_lab3.Classes.ItemClasses
+namespace oop_lab3.Classes.GameClasses.ItemClasses
 {
     [Flags]
     public enum Enchantments

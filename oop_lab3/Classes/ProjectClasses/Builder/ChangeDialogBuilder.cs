@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.Items.Placeables;
-using oop_lab3.Classes.Items.Usables;
-using oop_lab3.Classes.Items.Weapons;
-using oop_lab3.Classes.Other;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.Items.Placeables;
+using oop_lab3.Classes.GameClasses.Items.Usables;
+using oop_lab3.Classes.GameClasses.Items.Weapons;
+using oop_lab3.Classes.GameClasses.Other;
 using Xceed.Wpf.Toolkit;
 
-namespace oop_lab3.Classes.Builder
+namespace oop_lab3.Classes.ProjectClasses.Builder
 {
     public class ChangeDialogBuilder : DialogBuilder
     {
@@ -22,20 +19,19 @@ namespace oop_lab3.Classes.Builder
                 throw new InvalidOperationException("Not all fields are initialized");
             }
 
-            base.AddTextBlock($"Type: {this.Item.Type.ToString()}", "ItemType");
+            AddTextBlock($"Type: {this.Item.Type.ToString()}", "ItemType");
 
-            this.AddStackable();
-            this.AddSpecific();
+            AddStackable();
+            AddSpecific();
 
-            base.AddCloseButton("Save", "SaveButton");
+            AddCloseButton("Save", "SaveButton");
         }
 
         private void AddStackable()
         {
-            IStackable stackItem = this.Item as IStackable;
-            if (stackItem != null)
+            if (Item is IStackable stackItem)
             {
-                base.AddComboBoxWithLabel("Amount", "ItemAmount", Enumerable.Range(1, stackItem.StackMax),
+                AddComboBoxWithLabel("Amount", "ItemAmount", Enumerable.Range(1, stackItem.StackMax),
                     stackItem.Amount - 1,
                     (o, e) =>
                     {
@@ -49,8 +45,8 @@ namespace oop_lab3.Classes.Builder
             switch (this.Item)
             {
                 case SwordItem sword:
-                    int amount = Enum.GetValues(typeof(Enchantments)).Cast<int>().Sum() + 1;
-                    base.AddComboBoxWithLabel("Enchantment", "ItemEnchantment", Enumerable.Range(0, amount).Cast<Enchantments>(),
+                    var amount = Enum.GetValues(typeof(Enchantments)).Cast<int>().Sum() + 1;
+                    AddComboBoxWithLabel("Enchantment", "ItemEnchantment", Enumerable.Range(0, amount).Cast<Enchantments>(),
                         (int)sword.Enchantments,
                         (o, e) =>
                         {
@@ -58,14 +54,14 @@ namespace oop_lab3.Classes.Builder
                         });
                     break;
                 case FlintAndSteelItem flint:
-                    base.AddCheckBoxWithLabel("Is lit", "ItemLit", flint.Lit,
+                    AddCheckBoxWithLabel("Is lit", "ItemLit", flint.Lit,
                         (o, e) =>
                         {
                             flint.Lit = ((CheckBox) o).IsChecked ?? false;
                         });
                     break;
                 case BedBlockItem bed:
-                    base.AddColorPicker("ItemColor", bed.Color, (o, e) =>
+                    AddColorPicker("ItemColor", bed.Color, (o, e) =>
                     {
                         var selectedColor = ((ColorPicker) o).SelectedColor.Value;
                         bed.Color = new Color(selectedColor.R, selectedColor.G, selectedColor.B);

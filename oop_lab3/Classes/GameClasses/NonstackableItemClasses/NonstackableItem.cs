@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.ItemClasses;
+using oop_lab3.Classes.GameClasses.ItemClasses;
 
-namespace oop_lab3.Classes.NonstackableItemClasses
+namespace oop_lab3.Classes.GameClasses.NonstackableItemClasses
 {
     [Serializable]
     public abstract class NonstackableItem : Item

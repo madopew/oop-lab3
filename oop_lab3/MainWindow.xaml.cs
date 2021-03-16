@@ -1,34 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Serialization;
-using oop_lab3.Classes.Builder;
-using oop_lab3.Classes.Factory;
-using oop_lab3.Classes.InventoryClasses;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.SerializerAdapter;
+using oop_lab3.Classes.GameClasses.InventoryClasses;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.ProjectClasses.Builder;
+using oop_lab3.Classes.ProjectClasses.Factory;
+using oop_lab3.Classes.ProjectClasses.SerializerAdapter;
+using oop_lab3.CustomView;
+using Inventory = oop_lab3.Classes.GameClasses.InventoryClasses.Inventory;
 
 namespace oop_lab3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : INotifyPropertyChanged
     {
         private readonly Inventory inv;
 

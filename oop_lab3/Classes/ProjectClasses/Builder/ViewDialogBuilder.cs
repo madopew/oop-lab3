@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.Items.Placeables;
-using oop_lab3.Classes.Items.Usables;
-using oop_lab3.Classes.Items.Weapons;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.Items.Placeables;
+using oop_lab3.Classes.GameClasses.Items.Usables;
+using oop_lab3.Classes.GameClasses.Items.Weapons;
 
-namespace oop_lab3.Classes.Builder
+namespace oop_lab3.Classes.ProjectClasses.Builder
 {
     public class ViewDialogBuilder : DialogBuilder
     {
@@ -18,20 +16,19 @@ namespace oop_lab3.Classes.Builder
                 throw new InvalidOperationException("Not all fields are initialized");
             }
 
-            base.AddTextBlock($"Type: {this.Item.Type.ToString()}", "ItemType");
+            AddTextBlock($"Type: {this.Item.Type.ToString()}", "ItemType");
 
             this.AddStackable();
             this.AddSpecific();
-            base.AddCloseButton("OK", "CloseButton");
+            AddCloseButton("OK", "CloseButton");
         }
 
         private void AddStackable()
         {
-            IStackable stackItem = this.Item as IStackable;
-            if (stackItem != null)
+            if (this.Item is IStackable stackItem)
             {
-                base.AddTextBlock($"Amount: {stackItem.Amount}", "ItemAmount");
-                base.AddTextBlock($"Max: {stackItem.StackMax}", "ItemMaxAmount");
+                AddTextBlock($"Amount: {stackItem.Amount}", "ItemAmount");
+                AddTextBlock($"Max: {stackItem.StackMax}", "ItemMaxAmount");
             }
         }
 
@@ -40,13 +37,13 @@ namespace oop_lab3.Classes.Builder
             switch (this.Item)
             {
                 case BedBlockItem bed:
-                    base.AddTextBlock($"Color: {bed.Color}", "ItemColor");
+                    AddTextBlock($"Color: {bed.Color}", "ItemColor");
                     break;
                 case FlintAndSteelItem flint:
-                    base.AddTextBlock($"Is lit: {flint.Lit}", "ItemLit");
+                    AddTextBlock($"Is lit: {flint.Lit}", "ItemLit");
                     break;
                 case SwordItem sword:
-                    base.AddTextBlock($"Enchantments: {sword.Enchantments}", "ItemEnchantments");
+                    AddTextBlock($"Enchantments: {sword.Enchantments}", "ItemEnchantments");
                     break;
             }
         }

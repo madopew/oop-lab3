@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
-using oop_lab3.Classes.Items.Blocks;
-using oop_lab3.Classes.Items.Craftables;
-using oop_lab3.Classes.Items.Placeables;
-using oop_lab3.Classes.Items.Usables;
-using oop_lab3.Classes.Items.Weapons;
+using oop_lab3.Classes.GameClasses.Items.Blocks;
+using oop_lab3.Classes.GameClasses.Items.Craftables;
+using oop_lab3.Classes.GameClasses.Items.Placeables;
+using oop_lab3.Classes.GameClasses.Items.Usables;
+using oop_lab3.Classes.GameClasses.Items.Weapons;
 
-namespace oop_lab3.Classes.ItemClasses
+namespace oop_lab3.Classes.GameClasses.ItemClasses
 {
     [Serializable]
     [XmlInclude(typeof(BedBlockItem))]

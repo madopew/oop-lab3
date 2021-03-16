@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using oop_lab3.Classes.ItemClasses;
+using oop_lab3.Classes.GameClasses.ItemClasses;
 
-namespace oop_lab3.Classes.Builder
+namespace oop_lab3.Classes.ProjectClasses.Builder
 {
     public interface IDialogBuilder
     {

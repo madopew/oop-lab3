@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.ItemClasses;
-using oop_lab3.Classes.NonstackableItemClasses;
+using oop_lab3.Classes.GameClasses.ItemClasses;
+using oop_lab3.Classes.GameClasses.NonstackableItemClasses;
 
-namespace oop_lab3.Classes.Items.Weapons
+namespace oop_lab3.Classes.GameClasses.Items.Weapons
 {
     [Serializable]
     public sealed class SwordItem : NonstackableItem, IEnchantable

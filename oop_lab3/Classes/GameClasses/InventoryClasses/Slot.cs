@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using oop_lab3.Classes.ItemClasses;
+﻿using oop_lab3.Classes.GameClasses.ItemClasses;
 
-namespace oop_lab3.Classes.InventoryClasses
+namespace oop_lab3.Classes.GameClasses.InventoryClasses
 {
     public sealed partial class Inventory
     {

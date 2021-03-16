@@ -1,4 +1,4 @@
-﻿namespace oop_lab3.Classes.ItemClasses
+﻿namespace oop_lab3.Classes.GameClasses.ItemClasses
 {
     public enum ItemType
     {

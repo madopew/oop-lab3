@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace oop_lab3.Classes.Other
+namespace oop_lab3.Classes.GameClasses.Other
 {
     [Serializable]
     public class Color

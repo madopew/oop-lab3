@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace oop_lab3.Classes.SerializerAdapter
+namespace oop_lab3.Classes.ProjectClasses.SerializerAdapter
 {
     public interface ISerializer
     {
