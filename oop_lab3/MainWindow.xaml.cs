@@ -159,6 +159,11 @@ namespace oop_lab3
 
             Item item = inv[slotIndex];
 
+            if (item is null)
+            {
+                return;
+            }
+
             IDialogBuilder builder = new ViewDialogBuilder();
             builder.Item = item;
             new ViewDialog(builder).ShowDialog();
@@ -173,6 +178,11 @@ namespace oop_lab3
             }
 
             Item item = inv[slotIndex];
+
+            if (item is null)
+            {
+                return;
+            }
 
             IDialogBuilder builder = new ChangeDialogBuilder();
             builder.Item = item;
@@ -201,15 +211,7 @@ namespace oop_lab3
                 items[i] = inv[i];
             }
 
-            ISerializer serializer;
-            if (isXml)
-            {
-                serializer = new XmlSerializerAdapter(items.GetType());
-            }
-            else
-            {
-                serializer = new BinaryFormatterAdapter();
-            }
+            ISerializer serializer = ItemSerializerFactory.CreateSerializer(isXml);
 
             using (FileStream f = new FileStream(fileName, FileMode.Create))
             {
@@ -237,15 +239,7 @@ namespace oop_lab3
             bool isXml = dialog.IsXml;
             string fileName = dialog.FileName;
 
-            ISerializer serializer;
-            if (isXml)
-            {
-                serializer = new XmlSerializerAdapter(typeof(Item[]));
-            }
-            else
-            {
-                serializer = new BinaryFormatterAdapter();
-            }
+            ISerializer serializer = ItemSerializerFactory.CreateSerializer(isXml);
 
             using (FileStream f = new FileStream(fileName, FileMode.Open))
             {
